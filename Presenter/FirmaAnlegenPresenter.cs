@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace Praktiku.Presenter
 {
    public class FirmaAnlegenPresenter
-    {
+    {   
         
         IFirmaAnlegenView firmaAnlegenView = new FirmaAnlegenView();
         Datenbankverbindung DbFirma = new Datenbankverbindung(); 
@@ -20,23 +20,23 @@ namespace Praktiku.Presenter
             firmaAnlegenView.LoeseFirmaAnlegenAus += FirmaHinzufuegen;
             firmaAnlegenView.ZeigeView();
         }
-
+        
         private void FirmaSchliessen()
         {
             firmaAnlegenView.SchlisseView();
         }
 
         private void FirmaHinzufuegen(string txtNeueFirmaBewerbungEMailadresse, string txtNeueFirmaHausnummer, string txtNeueFirmaHinweise, string txtNeueFirmaLand, string txtNeueFirmaName, string txtNeueFirmaOrt, string txtNeueFirmaPostleitzahl, string txtNeueFirmaStrasse, string txtNeuFirmaBewerbungTelefonnummer)
-        {
+        {  
             if(txtNeueFirmaName=="")
             {
                 MessageBox.Show("Tragen Sie bitte eine Firmaname ein");
             }
-            else if(txtNeuFirmaBewerbungTelefonnummer=="")
-            {
-                MessageBox.Show("Tragen Sie bitte Bewerbungstelefonnummer ein");
-            }
-            else if(txtNeueFirmaPostleitzahl=="")
+            //else if (txtNeuFirmaBewerbungTelefonnummer == A,b,c,d)
+            //{
+            //    MessageBox.Show("Tragen Sie bitte Bewerbungstelefonnummer ein");
+            //}
+            else if (txtNeueFirmaPostleitzahl=="")
             {
                 MessageBox.Show("Tragen Sie bitte ein Postleitzahl ein");
             }

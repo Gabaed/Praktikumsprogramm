@@ -259,6 +259,7 @@
             this.Controls.Add(this.txtNeueFirmaName);
             this.Name = "FirmaAnlegenView";
             this.Text = "FirmaAnlegenView";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FirmaAnlegenView_FormClosed);
             this.Load += new System.EventHandler(this.FirmaAnlegenView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

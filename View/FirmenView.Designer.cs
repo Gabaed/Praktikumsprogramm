@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnFirmaAnlegen = new System.Windows.Forms.Button();
-            this.praktikumsprogrammDataSet = new Praktiku.praktikumsprogrammDataSet();
-            this.firmaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.firmaTableAdapter = new Praktiku.praktikumsprogrammDataSetTableAdapters.firmaTableAdapter();
             this.idFirmaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firmennameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bewerbungTelefonnummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +40,14 @@
             this.straßeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hausnummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.landDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firmaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.praktikumsprogrammDataSet = new Praktiku.praktikumsprogrammDataSet();
+            this.btnFirmaAnlegen = new System.Windows.Forms.Button();
+            this.firmaTableAdapter = new Praktiku.praktikumsprogrammDataSetTableAdapters.firmaTableAdapter();
             this.btnFirmenViewSchliessen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.praktikumsprogrammDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.praktikumsprogrammDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -71,30 +71,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1069, 424);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // btnFirmaAnlegen
-            // 
-            this.btnFirmaAnlegen.Location = new System.Drawing.Point(567, 439);
-            this.btnFirmaAnlegen.Name = "btnFirmaAnlegen";
-            this.btnFirmaAnlegen.Size = new System.Drawing.Size(136, 43);
-            this.btnFirmaAnlegen.TabIndex = 1;
-            this.btnFirmaAnlegen.Text = "Fima anlegen";
-            this.btnFirmaAnlegen.UseVisualStyleBackColor = true;
-            this.btnFirmaAnlegen.Click += new System.EventHandler(this.btnFirmaAnlegen_Click);
-            // 
-            // praktikumsprogrammDataSet
-            // 
-            this.praktikumsprogrammDataSet.DataSetName = "praktikumsprogrammDataSet";
-            this.praktikumsprogrammDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // firmaBindingSource
-            // 
-            this.firmaBindingSource.DataMember = "firma";
-            this.firmaBindingSource.DataSource = this.praktikumsprogrammDataSet;
-            // 
-            // firmaTableAdapter
-            // 
-            this.firmaTableAdapter.ClearBeforeFill = true;
             // 
             // idFirmaDataGridViewTextBoxColumn
             // 
@@ -156,6 +132,30 @@
             this.landDataGridViewTextBoxColumn.HeaderText = "Land";
             this.landDataGridViewTextBoxColumn.Name = "landDataGridViewTextBoxColumn";
             // 
+            // firmaBindingSource
+            // 
+            this.firmaBindingSource.DataMember = "firma";
+            this.firmaBindingSource.DataSource = this.praktikumsprogrammDataSet;
+            // 
+            // praktikumsprogrammDataSet
+            // 
+            this.praktikumsprogrammDataSet.DataSetName = "praktikumsprogrammDataSet";
+            this.praktikumsprogrammDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnFirmaAnlegen
+            // 
+            this.btnFirmaAnlegen.Location = new System.Drawing.Point(567, 439);
+            this.btnFirmaAnlegen.Name = "btnFirmaAnlegen";
+            this.btnFirmaAnlegen.Size = new System.Drawing.Size(136, 43);
+            this.btnFirmaAnlegen.TabIndex = 1;
+            this.btnFirmaAnlegen.Text = "Fima anlegen";
+            this.btnFirmaAnlegen.UseVisualStyleBackColor = true;
+            this.btnFirmaAnlegen.Click += new System.EventHandler(this.btnFirmaAnlegen_Click);
+            // 
+            // firmaTableAdapter
+            // 
+            this.firmaTableAdapter.ClearBeforeFill = true;
+            // 
             // btnFirmenViewSchliessen
             // 
             this.btnFirmenViewSchliessen.Location = new System.Drawing.Point(209, 439);
@@ -176,10 +176,11 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FirmenView";
             this.Text = "FirmenView";
+            this.Activated += new System.EventHandler(this.FirmenView_Activated);
             this.Load += new System.EventHandler(this.FirmenView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.praktikumsprogrammDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.praktikumsprogrammDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

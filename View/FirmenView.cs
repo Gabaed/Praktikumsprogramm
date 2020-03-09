@@ -39,6 +39,8 @@ namespace Praktiku.View
         {
             // TODO: Diese Codezeile lädt Daten in die Tabelle "praktikumsprogrammDataSet.firma". Sie können sie bei Bedarf verschieben oder entfernen.
             this.firmaTableAdapter.Fill(this.praktikumsprogrammDataSet.firma);
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = this.praktikumsprogrammDataSet.firma;
 
         }
 
@@ -50,6 +52,13 @@ namespace Praktiku.View
         public void SchliesseView()
         {
             this.Close();
+        }
+
+        private void FirmenView_Activated(object sender, EventArgs e)
+        {
+            this.firmaTableAdapter.Fill(this.praktikumsprogrammDataSet.firma);
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = this.praktikumsprogrammDataSet.firma;
         }
     }
 }

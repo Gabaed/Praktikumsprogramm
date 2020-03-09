@@ -47,5 +47,10 @@ namespace Praktiku.View
         {
             this.Close();
         }
+
+        private void FirmaAnlegenView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
     }
 }
